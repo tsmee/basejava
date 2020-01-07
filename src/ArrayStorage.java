@@ -31,14 +31,9 @@ public class ArrayStorage {
     public void delete(String uuid) {
         for (int i = 0; i < size; i++) {
             if (storage[i].uuid == uuid) {
-                Resume[] newArray = new Resume[storage.length - 1];
-                System.arraycopy(storage, 0, newArray, 0, i);
-                System.arraycopy(storage, i + 1, newArray, i, storage.length - 1);
-                storage = newArray;
+                System.arraycopy(storage, i + 1, storage, i, storage.length - 1);
                 size--;
                 break;
-
-
             }
         }
     }
