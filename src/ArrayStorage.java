@@ -13,14 +13,12 @@ public class ArrayStorage {
     }
 
     public void save(Resume r) {
-        int lastResume = size;
-        storage[lastResume] = r;
+        storage[size] = r;
         size++;
     }
 
     public Resume get(String uuid) {
-        int arraySize = size;
-        for (int i = 0; i < arraySize; i++) {
+        for (int i = 0; i < size; i++) {
             if (storage[i].uuid == uuid) {
                 return storage[i];
             }
@@ -31,7 +29,8 @@ public class ArrayStorage {
     public void delete(String uuid) {
         for (int i = 0; i < size; i++) {
             if (storage[i].uuid == uuid) {
-                System.arraycopy(storage, i + 1, storage, i, size);
+                System.arraycopy(storage, i + 1, storage, i, size - (i+1));
+                storage[size-1] = null;
                 size--;
                 break;
             }
