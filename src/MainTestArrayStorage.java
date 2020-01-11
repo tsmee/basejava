@@ -1,11 +1,12 @@
 import com.azarov.webapp.model.Resume;
 import com.azarov.webapp.storage.ArrayStorage;
+import com.azarov.webapp.storage.Storage;
 
 /**
  * Test for your com.azarov.webapp.storage.ArrayStorage implementation
  */
 public class MainTestArrayStorage {
-    static final ArrayStorage ARRAY_STORAGE = new ArrayStorage();
+    private static final Storage ARRAY_STORAGE = new ArrayStorage();
 
     public static void main(String[] args) {
         Resume r1 = new Resume();
